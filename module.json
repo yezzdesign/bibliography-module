@@ -1,0 +1,13 @@
+{
+    "name": "Bibliography",
+    "alias": "bibliography",
+    "description": "",
+    "keywords": [],
+    "priority": 10,
+    "providers": [
+        "Modules\\Bibliography\\Providers\\BibliographyServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
