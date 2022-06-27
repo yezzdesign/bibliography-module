@@ -1,3 +1,3 @@
-<div>
-    {{ $book->posts_id??'No Post Yet' }}
-</div>
+<x-acp::tableComponents.id
+    :id="$book->posts_id??'No Post Yet'"
+/>

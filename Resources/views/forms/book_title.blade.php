@@ -7,8 +7,8 @@
         name="book_title"
         id="book_title"
         errorDBColumn="book_title"
-        :value="old('book_title') ?? $book->book_title ?? '' "
-        :placeholder="__('bibliography::forms.book_title.placeholder')">
+        :value=" old('book_title') ?? $book->book_title ?? '' "
+        :placeholder=" __('bibliography::forms.book_title.placeholder') ">
 
         <x-slot:span>
             <span class="inline-flex items-center px-3 rounded-l-sm border-y border-l border-main_brand/50 bg-main_brand/5 text-main_font/80 text-sm">

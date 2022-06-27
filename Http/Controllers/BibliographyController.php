@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\ACP\Logical\ImageControl;
 use Modules\Bibliography\Entities\Bibliography;
-use Modules\Bibliography\Logical\Table;
 
 class BibliographyController extends Controller
 {
@@ -17,14 +16,7 @@ class BibliographyController extends Controller
      */
     public function index()
     {
-        // Load the Databasedata with all colums from Module (start.php)
-        $books          =   Bibliography::select(Table::getDatabaseFields())->orderBy('id', 'desc')->get();
-
-        // Get the data for the Table on Index Site
-        $tableHeader    =   Table::getDatabaseValues(); // Header
-        $tableBodyValue =   Table::getTableRowComponentsPath(); // wich views to include
-
-        return view('bibliography::index', compact('books', 'tableHeader', 'tableBodyValue'));
+        return view('bibliography::index', ['books' => Bibliography::getIndexTableData()]);
     }
 
     /**

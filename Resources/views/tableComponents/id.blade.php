@@ -1,3 +1,3 @@
-<div>
-    {{ $book->id }}
-</div>
+<x-acp::tableComponents.id
+    :id="$book->id"
+/>

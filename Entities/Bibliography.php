@@ -18,6 +18,10 @@ class Bibliography extends Model
         'book_status'
     ];
 
+    public static function getIndexTableData() {
+        return self::orderBy('id', 'desc')->paginate(25);
+    }
+
     protected static function newFactory()
     {
         return \Modules\Bibliography\Database\factories\BibliographyFactory::new();

@@ -14,32 +14,8 @@
     </x-acp::header>
     {{-- End Header --}}
 
-    {{-- Beginn Table Booklist --}}
-    <x-acp::table>
-        <x-acp::table.header>
-            @foreach($tableHeader as $header)
-                <x-acp::table.header.item> {{ $header }} </x-acp::table.header.item>
-            @endforeach
-        </x-acp::table.header>
-
-        {{-- Begin Table Body--}}
-        <x-acp::table.body>
-            @foreach($books as $book)
-                <x-acp::table.tr>
-
-                    @foreach($tableBodyValue as $bodyValue)
-                        <!-- -->
-                        <x-acp::table.td>
-                        @include($bodyValue)
-                        </x-acp::table.td>
-                        <!-- -->
-                    @endforeach
-
-                </x-acp::table.tr>
-            @endforeach
-        </x-acp::table.body>
-        {{-- End Table Body--}}
-    </x-acp::table>
-    {{-- End Table Booklist--}}
+    {{-- Table Booklist --}}
+    {!! app( 'BibliographyIndexTable' )->render( $books , 'book') !!}
+    {{ $books->links() }}
 
 </x-bibliography::app>
